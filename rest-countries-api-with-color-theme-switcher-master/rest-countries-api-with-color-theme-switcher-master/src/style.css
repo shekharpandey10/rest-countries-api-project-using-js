@@ -1,0 +1,65 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin:0;
+    font-family: Nunito,sans-serif;
+}
+.title{
+    font-weight: 700;
+}
+.header-contant{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    align-items: center;
+    margin-inline:auto;
+    
+}
+.header-container{
+    box-shadow: 0px 1px 4px 1px rgba(0,0,0,0.2);
+    padding-inline: 1.5rem;
+}
+main{
+    padding:1.5rem;
+}
+a{
+    text-decoration-line: none;
+    color:inherit;
+}
+.countries-container{
+    max-width: 1200px;
+    margin-inline:auto;
+    display: flex;
+    justify-content: space-between;
+    gap:1rem;
+    flex-wrap: wrap;
+}
+.country{
+    display: inline-block;
+    width: 250px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 8px 2px rgba(0,0,0,0.2);
+    overflow: hidden;
+    padding-bottom: 1rem;
+    margin-top: 1rem;
+    transition: all 0.2s ease-in-out;
+}
+.country img{
+    width: 100%;
+}
+.card-text{
+    padding-inline: 16px;
+    margin-block:5px;
+}
+.card-title{
+    font-size: 1.5rem;
+}
+.card-text p{
+    margin-block: 8px;
+}
+
+.country:hover{
+    transform: scale(1.02);
+    box-shadow: 0 0 16px 0 rgba(0,0,0,0.2);
+ }
