@@ -63,3 +63,8 @@ a{
     transform: scale(1.02);
     box-shadow: 0 0 16px 0 rgba(0,0,0,0.2);
  }
+ @media(max-width:600px){
+    .countries-container{
+        justify-content: center;
+    }
+ }
