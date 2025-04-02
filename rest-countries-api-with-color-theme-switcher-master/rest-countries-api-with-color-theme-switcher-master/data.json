@@ -14,7 +14,7 @@
     "demonym": "Afghan",
     "area": 652230,
     "timezones": ["UTC+04:30"],
-    "borders": ["IRN", "PAK", "TKM", "UZB", "TJK", "CHN"],
+    "fja": ["IRN", "PAK", "TKM", "UZB", "TJK", "CHN"],
     "nativeName": "افغانستان",
     "numericCode": "004",
     "flags": {
