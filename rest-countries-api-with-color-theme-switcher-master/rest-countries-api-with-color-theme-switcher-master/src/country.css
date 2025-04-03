@@ -24,6 +24,7 @@
     width: 50%;
     max-height: 500px;
     border-radius: 2px;
+    border: 1px solid #ddd;
    
 }
 @media(max-width:500px){
@@ -60,7 +61,7 @@
     }
 }
 
-a {
+.borderOn {
     text-decoration-line: none;
     color: inherit;
     padding: 5px;
@@ -71,6 +72,8 @@ a {
 .border-country{
     margin-left :650px;
     margin-top: 20px;
+    display: flex;
+   
 }
 .countries-container{
     margin: 0;

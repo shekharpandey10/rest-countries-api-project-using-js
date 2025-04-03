@@ -19,6 +19,7 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`).then(r
       fetch(`https://restcountries.com/v3.1/alpha/${border}`).then(res => res.json()).then((borderCountries) => {
         console.log(borderCountries)
         const borderCountryTag=document.createElement('a')
+        borderCountryTag.classList.add("borderOn")
         borderCountryTag.href=`country.html?name=${borderCountries[0].name.common}`
         borderCountryTag.innerText=borderCountries[0].name.common
         console.log(borderCountries)

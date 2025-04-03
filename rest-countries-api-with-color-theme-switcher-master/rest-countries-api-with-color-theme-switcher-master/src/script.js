@@ -1,7 +1,11 @@
 const countriesContainer = document.querySelector('.countries-container')
 const regionFilter=document.querySelector('#region')
-
-fetch('https://restcountries.com/v3.1/all').then((res) => res.json()).then((data) => renderCountries(data))
+const searchBar=document.querySelector('.search-bar')
+let allCountriesData
+fetch('https://restcountries.com/v3.1/all').then((res) => res.json()).then((data) => {
+    renderCountries(data)
+    allCountriesData=data
+})
 
 
 const countryCard = document.createElement('a')
@@ -38,3 +42,11 @@ function renderCountries(data){   //pass the array
         countriesContainer.append(countryCard)
     })
 }
+
+searchBar.addEventListener('input',(e)=>{
+    console.log(e.target.value)
+    console.log(allCountriesData)
+  const serchedCountry=allCountriesData.filter((country)=>country.name.common.toLowerCase().includes(e.target.value.toLowerCase()))
+  console.log(serchedCountry)
+  renderCountries(serchedCountry)
+})
