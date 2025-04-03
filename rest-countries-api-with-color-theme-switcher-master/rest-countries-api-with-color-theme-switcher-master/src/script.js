@@ -1,9 +1,28 @@
 const countriesContainer = document.querySelector('.countries-container')
+const regionFilter=document.querySelector('#region')
+
+fetch('https://restcountries.com/v3.1/all').then((res) => res.json()).then((data) => renderCountries(data))
 
 
-fetch('https://restcountries.com/v3.1/all').then((res) => res.json()).then((data) => {
+const countryCard = document.createElement('a')
+countryCard.classList.add('country')
+countryCard.innerHTML = `
+      <img src="https://flagcdn.com/gd.svg" alt="flag">
+                <div class="card-text">
+                <h3 class="card-title">Grenada</h3>
+                <p><b>Population:</b>112519</p>
+                <p><b>Region:</b></p>
+                <p><b>Capital:</b></p>
+                </div>
+`
+
+regionFilter.addEventListener('change',(e)=>{
+    fetch(`https://restcountries.com/v3.1/region/${regionFilter.value}`).then((res) => res.json()).then((data) => renderCountries(data))
+})
+
+function renderCountries(data){   //pass the array
+    countriesContainer.innerHTML=``
     data.forEach((country) => {
-        
         const countryCard = document.createElement('a')
         countryCard.classList.add('country')
           countryCard.href=`./country.html?name=${country.name.common}`
@@ -18,17 +37,4 @@ fetch('https://restcountries.com/v3.1/all').then((res) => res.json()).then((data
             `
         countriesContainer.append(countryCard)
     })
-})
-
-
-const countryCard = document.createElement('a')
-countryCard.classList.add('country')
-countryCard.innerHTML = `
-      <img src="https://flagcdn.com/gd.svg" alt="flag">
-                <div class="card-text">
-                <h3 class="card-title">Grenada</h3>
-                <p><b>Population:</b>112519</p>
-                <p><b>Region:</b></p>
-                <p><b>Capital:</b></p>
-                </div>
-`
+}
