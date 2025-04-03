@@ -1,7 +1,8 @@
 const countriesContainer = document.querySelector('.countries-container')
 const regionFilter=document.querySelector('#region')
 const searchBar=document.querySelector('.search-bar')
-let allCountriesData
+const darkMode=document.querySelector('.header-contant p')
+const body=document.querySelector('body')
 fetch('https://restcountries.com/v3.1/all').then((res) => res.json()).then((data) => {
     renderCountries(data)
     allCountriesData=data
@@ -49,4 +50,8 @@ searchBar.addEventListener('input',(e)=>{
   const serchedCountry=allCountriesData.filter((country)=>country.name.common.toLowerCase().includes(e.target.value.toLowerCase()))
   console.log(serchedCountry)
   renderCountries(serchedCountry)
+})
+
+darkMode.addEventListener('click',()=>{
+    document.body.classList.toggle('dark-mode')
 })

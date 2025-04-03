@@ -2,8 +2,18 @@
     box-sizing: border-box;
 }
 body{
+    --background-color:white;
+    --text-color:black;
+    --element-color:white;
     margin:0;
     font-family: Nunito,sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+.dark-mode{
+    --background-color:hsl(207, 26%, 17%);
+    --text-color:white;
+    --element-color:hsl(209, 23%, 22%);
 }
 .title{
     font-weight: 700;
@@ -16,9 +26,13 @@ body{
     /* margin-inline:auto; */
     
 }
+.header-contant p{
+    cursor: pointer;
+}
 .header-container{
     box-shadow: 0px 1px 4px 1px rgba(0,0,0,0.2);
     padding-inline: 1.5rem;
+    background-color: var(--element-color);
 }
 main{
     padding:1.5rem;
@@ -44,6 +58,7 @@ a{
     padding-bottom: 1rem;
     margin-top: 1rem;
     transition: all 0.2s ease-in-out;
+    background-color: var(--element-color);
 }
 .country img{
     width: 100%;
@@ -78,6 +93,8 @@ a{
     border: none;
     outline: none;
    padding: 16px;
+   background-color: inherit;
+   color: inherit;
   
 }
 #region{
@@ -87,17 +104,13 @@ a{
    border-radius: 4px;
    outline: none;
     border: none;
+    background-color: inherit;
+    color: inherit;
 }
-/* .filter select{
-    outline: none;
-    border: none;
-   width: 250px;
+#region option {
+    background-color: var(--element-color);
+    color: var(--text-color);
 }
-option{
-    max-width: 300px;
-    box-shadow: 0 0 16px 0 rgba(0,0,0,0.2);
-   padding:15px
-} */
 .country:hover{
     transform: scale(1.02);
     box-shadow: 0 0 16px 0 rgba(0,0,0,0.2);

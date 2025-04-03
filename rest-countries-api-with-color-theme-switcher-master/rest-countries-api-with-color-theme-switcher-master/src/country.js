@@ -3,6 +3,7 @@ const countryName = new URLSearchParams(location.search).get('name')
 const flagImg = document.querySelector('.data-container img')
 const borderCountry=document.querySelector('.border-country')
 const div2=document.createElement('div')
+const darkMode=document.querySelector('.header-contant p')
 div2.classList.add("border-country")
 div2.innerText=`Border Countries: `
 fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`).then(res => res.json()).then((data) => {
@@ -54,3 +55,6 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`).then(r
   countryContainer.appendChild(div2)
 })
 
+darkMode.addEventListener('click',()=>{
+  document.body.classList.toggle('dark-mode')
+})
